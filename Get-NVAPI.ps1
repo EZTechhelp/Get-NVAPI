@@ -114,7 +114,7 @@ function Set-PreferredGPU{
     write-host "$($Preferred_OpenGL_GPU.SettingInfo.AvailableValues | out-string)"
   
     #Lets get the value of the GPU we want (currently dont know how to know which setting is which GPU so using a reference machine with same hardware can help find value you want)
-    $New_Preferred_OpenGL_GPU_Value = $Preferred_OpenGL_GPU.SettingInfo.AvailableValues | where {$_ -eq 'id,2.0:220610DE,00000100,GF - (368,2,161,10240) @ (0)'}
+    $New_Preferred_OpenGL_GPU_Value = $Preferred_OpenGL_GPU.SettingInfo.AvailableValues | where {$_ -eq $Preferred_GPU_Value}
   
     #Now we can set the new value for Preferred OpenGL GPU. We will need the Setting ID, Setting type and new value
     write-host ">>>> Setting new value to $New_Preferred_OpenGL_GPU_Value" -ForegroundColor Cyan 
